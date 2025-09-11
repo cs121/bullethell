@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="7"]
+
+[ext_resource path="res://levels/LevelController.gd" type="Script" id=1]
+[ext_resource path="res://assets/tiles/space_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy/Spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=5]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1")
+
+[node name="BG" type="TileMap" parent="."]
+tile_set = ExtResource("2")
+cell_size = Vector2i(32, 32)
+
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector2(0, 200)
+
+[node name="Spawner" parent="." instance=ExtResource("4")]
+
+[node name="HUD" parent="." instance=ExtResource("5")]
