@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ciha26vhsa2mk"]
+[gd_scene format=4]
 
 [node name="Tile" type="Node2D"]
 

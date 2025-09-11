@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg6s01bsujt50"]
+[gd_scene load_steps=2 format=4]
 
-[ext_resource type="TileSet" path="res://background/tileset.tres" id="1"]
+[ext_resource type="TileSet" path="res://background/tileset.tres" id=1]
 
 [node name="Background" type="Node2D"]
 

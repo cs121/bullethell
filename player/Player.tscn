@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1gsceak3jlnh"]
+[gd_scene load_steps=6 format=4]
 
-[ext_resource type="Script" uid="uid://b6b8tdn2ryva7" path="res://player/Player.gd" id="1"]
-[ext_resource type="Script" uid="uid://2qvqwd7ex1g8" path="res://components/HealthComponent.gd" id="2"]
-[ext_resource type="Script" uid="uid://cjvjv2sul7d0n" path="res://components/WeaponComponent.gd" id="3"]
-[ext_resource type="Script" uid="uid://casxedamth3ji" path="res://components/MovementComponent.gd" id="4"]
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://components/HealthComponent.gd" type="Script" id=2]
+[ext_resource path="res://components/WeaponComponent.gd" type="Script" id=3]
+[ext_resource path="res://components/MovementComponent.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 8.0

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bifkmco4yrtyk"]
+[gd_scene load_steps=3 format=4]
 
-[ext_resource type="Script" uid="uid://chgludapso3ww" path="res://projectiles/Projectile.gd" id="1"]
+[ext_resource path="res://projectiles/Projectile.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 4.0
