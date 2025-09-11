@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=4]
+[gd_scene load_steps=2 format=3 uid="uid://bu16aj2x2us7c"]
 
-[ext_resource path="res://effects/HitEffect.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://gw2rsqw6ukq4" path="res://effects/HitEffect.gd" id="1"]
 
 [node name="HitEffect" type="Node2D"]
 script = ExtResource("1")
