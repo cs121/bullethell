@@ -1,0 +1,9 @@
+{
+  "waves": [
+    {
+      "enemy_scene": "res://enemies/Enemy.tscn",
+      "count": 5,
+      "spawn_interval": 0.5
+    }
+  ]
+}
