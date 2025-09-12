@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjk7m7xy4mptc"]
+[gd_scene load_steps=7 format=3 uid="uid://cjk7m7xy4mptc"]
 
 [ext_resource type="Script" uid="uid://bmoxg5yb5q1nl" path="res://enemy/Miniboss.gd" id="1"]
 [ext_resource type="Script" uid="uid://1rka6w2brjsw" path="res://enemy/patterns/PatternSpiral.gd" id="2"]
 [ext_resource type="Script" uid="uid://chnohu8wkogbe" path="res://enemy/patterns/PatternFan.gd" id="3"]
 [ext_resource type="Script" uid="uid://baknho26cw0vg" path="res://enemy/patterns/PatternRain.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/ships/Spaceship-Drakir4.png" id="5"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 16.0
@@ -14,6 +15,7 @@ script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
+texture = ExtResource("5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
