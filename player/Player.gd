@@ -21,16 +21,8 @@ func _physics_process(delta: float) -> void:
 		invincible -= delta
 
 func _handle_movement(delta: float) -> void:
-	var input_vec := Vector2.ZERO
-	if Input.is_action_pressed(&"move_left"):
-		input_vec.x -= 1.0
-	if Input.is_action_pressed(&"move_right"):
-		input_vec.x += 1.0
-	if Input.is_action_pressed(&"move_up"):
-		input_vec.y -= 1.0
-	if Input.is_action_pressed(&"move_down"):
-		input_vec.y += 1.0
-	input_vec = input_vec.normalized()
+	# Use Input.get_vector to support both keyboard and gamepad movement
+	var input_vec := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var current_speed := speed
 	if Input.is_action_pressed(&"focus"):
 		current_speed *= 0.5
