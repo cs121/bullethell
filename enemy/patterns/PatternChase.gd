@@ -15,7 +15,7 @@ func tick(enemy: Node, delta: float) -> void:
 	if not active:
 		return
 	if player != null:
-		var dir := (player.global_position - enemy.global_position).normalized()
+		var dir: Vector2 = (player.global_position - enemy.global_position).normalized()
 		enemy.position += dir * move_speed * delta
 		timer -= delta
 		if timer <= 0.0:

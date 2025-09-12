@@ -26,7 +26,7 @@ func tick(enemy: Node, delta: float) -> void:
 	timer -= delta
 	if timer <= 0.0 and player != null:
 		timer = interval
-		var dir := (player.global_position - enemy.global_position).normalized()
+		var dir: Vector2 = (player.global_position - enemy.global_position).normalized()
 		var b := PoolManager.get_from_pool(&"enemy_bullets") as Bullet
 		enemy.get_parent().add_child(b)
 		b.fire(enemy.global_position, dir, bullet_speed, 1)

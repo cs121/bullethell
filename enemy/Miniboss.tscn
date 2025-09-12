@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://1rka6w2brjsw" path="res://enemy/patterns/PatternSpiral.gd" id="2"]
 [ext_resource type="Script" uid="uid://chnohu8wkogbe" path="res://enemy/patterns/PatternFan.gd" id="3"]
 [ext_resource type="Script" uid="uid://baknho26cw0vg" path="res://enemy/patterns/PatternRain.gd" id="4"]
-[ext_resource type="Texture2D" path="res://assets/ships/Spaceship-Drakir4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cc2mdqd4ldr70" path="res://assets/ships/Spaceship-Drakir4.png" id="5"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 16.0

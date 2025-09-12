@@ -8,7 +8,7 @@ func drop(at: Vector2) -> void:
 	# Activate star at given position
 	position = at
 	Utils.activate(self)
-	update()
+	queue_redraw()
 
 func _physics_process(delta: float) -> void:
 	# Fall slowly downward
