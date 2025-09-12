@@ -2,12 +2,14 @@ extends Node2D
 class_name LevelController
 
 @export var scroll_speed: float = 40.0
+@export var level_name: String = ""
 @onready var spawner: Spawner = $Spawner
 @onready var hud: HUD = $HUD
 @onready var bg: TileMap = $BG
 
 func _ready() -> void:
 	GameSignals.spawn_request.connect(_on_spawn_request)
+	hud.set_level_name(level_name if level_name != "" else name)
 
 func _process(delta: float) -> void:
 	bg.position.y += scroll_speed * delta

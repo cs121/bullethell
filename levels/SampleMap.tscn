@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6nfncd8dlva"]
+[gd_scene load_steps=8 format=3 uid="uid://c6nfncd8dlva"]
 
 [ext_resource type="Script" uid="uid://0u0ggwicthpx" path="res://levels/LevelController.gd" id="1"]
 [ext_resource type="TileSet" path="res://assets/tiles/space_tileset.tres" id="2"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://boo060d7wi7tp" path="res://enemy/Spawner.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cjk7m7xy4mptc" path="res://enemy/Miniboss.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://do0mdp7086duo" path="res://ui/HUD.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cb5dy8x3r2ofi" path="res://enemy/SampleEnemy.tscn" id="7"]
 
 [node name="SampleMap" type="Node2D"]
 script = ExtResource("1")
+level_name = "Sample Level"
 
 [node name="BG" type="TileMap" parent="."]
 tile_set = ExtResource("2")
@@ -57,8 +59,60 @@ waves = [{
 }, {
 "pattern": &"PatternChase",
 "pos": Vector2(40, -180),
-"time": 10.0
+"time": 10.0,
+}, {
+"pattern": &"PatternStraight",
+"pos": Vector2(80, -120),
+"time": 11.0,
+}, {
+"pattern": &"PatternZigzag",
+"pos": Vector2(-80, -120),
+"time": 12.0,
+}, {
+"pattern": &"PatternSine",
+"pos": Vector2(0, -150),
+"time": 13.0,
+}, {
+"pattern": &"PatternCircle",
+"pos": Vector2(60, -150),
+"time": 14.0,
+}, {
+"pattern": &"PatternFan",
+"pos": Vector2(-60, -150),
+"time": 15.0,
+}, {
+"pattern": &"PatternFlower",
+"pos": Vector2(0, -170),
+"time": 16.0,
+}, {
+"pattern": &"PatternRain",
+"pos": Vector2(80, -170),
+"time": 17.0,
+}, {
+"pattern": &"PatternSpiral",
+"pos": Vector2(-80, -170),
+"time": 18.0,
+}, {
+"pattern": &"PatternBurst",
+"pos": Vector2(40, -180),
+"time": 19.0,
+}, {
+"pattern": &"PatternChase",
+"pos": Vector2(-40, -180),
+"time": 20.0,
 }]
+
+[node name="SampleEnemy1" parent="." instance=ExtResource("7")]
+position = Vector2(-120, -200)
+start_pattern = &"PatternFan"
+
+[node name="SampleEnemy2" parent="." instance=ExtResource("7")]
+position = Vector2(0, -220)
+start_pattern = &"PatternCircle"
+
+[node name="SampleEnemy3" parent="." instance=ExtResource("7")]
+position = Vector2(120, -200)
+start_pattern = &"PatternSpiral"
 
 [node name="Miniboss" parent="." instance=ExtResource("5")]
 position = Vector2(0, -240)
