@@ -4,6 +4,8 @@
 [ext_resource path="res://enemy/patterns/PatternSpiral.gd" type="Script" id=2]
 [ext_resource path="res://enemy/patterns/PatternFan.gd" type="Script" id=3]
 [ext_resource path="res://enemy/patterns/PatternRain.gd" type="Script" id=4]
+[ext_resource path="res://enemy/patterns/PatternCircle.gd" type="Script" id=5]
+[ext_resource path="res://enemy/patterns/PatternFlower.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -28,5 +30,11 @@ script = ExtResource("3")
 
 [node name="PatternRain" type="Node" parent="Patterns"]
 script = ExtResource("4")
+
+[node name="PatternCircle" type="Node" parent="Patterns"]
+script = ExtResource("5")
+
+[node name="PatternFlower" type="Node" parent="Patterns"]
+script = ExtResource("6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
