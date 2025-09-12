@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="4"]
+[gd_scene load_steps=6 format=3 uid="uid://bfs5hq841rd8h"]
 
-[sub_resource type="CircleShape2D" id=1]
+[ext_resource type="Script" uid="uid://b2d1c5q5gu11" path="res://enemy/Enemy.gd" id="1"]
+[ext_resource type="Script" uid="uid://1rka6w2brjsw" path="res://enemy/patterns/PatternSpiral.gd" id="2"]
+[ext_resource type="Script" uid="uid://chnohu8wkogbe" path="res://enemy/patterns/PatternFan.gd" id="3"]
+[ext_resource type="Script" uid="uid://baknho26cw0vg" path="res://enemy/patterns/PatternRain.gd" id="4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 8.0
-
-[ext_resource path="res://enemy/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://enemy/patterns/PatternSpiral.gd" type="Script" id=2]
-[ext_resource path="res://enemy/patterns/PatternFan.gd" type="Script" id=3]
-[ext_resource path="res://enemy/patterns/PatternRain.gd" type="Script" id=4]
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 4
-collision_mask = 1
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.2, 0.2, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource(1)
+shape = SubResource("CircleShape2D_1")
 
 [node name="Patterns" type="Node" parent="."]
 

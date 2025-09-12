@@ -1,5 +1,5 @@
 extends Node
-class_name PoolManager
+class_name Pool_Manager
 
 @export var bullet_scene: PackedScene = preload("res://bullet/Bullet.tscn")
 @export var enemy_scene: PackedScene = preload("res://enemy/Enemy.tscn")
@@ -40,7 +40,8 @@ func get_from_pool(type: StringName) -> Node:
 	var node: Node
 	if pool.size() > 0:
 		node = pool.pop_back()
-		node.get_parent()?.remove_child(node)
+		if node.get_parent() != null:
+			node.get_parent().remove_child(node)
 	else:
 		node = scene_map[type].instantiate()
 		node.set_meta("pool_type", type)

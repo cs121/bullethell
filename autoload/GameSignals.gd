@@ -1,5 +1,5 @@
 extends Node
-class_name GameSignals
+class_name Game_Signals
 
 # Global signal hub
 signal player_hit(damage: int)

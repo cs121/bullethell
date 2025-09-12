@@ -1,24 +1,23 @@
-[gd_scene format=3 uid="9"]
+[gd_scene load_steps=8 format=3 uid="uid://cb5dy8x3r2ofi"]
 
-[ext_resource path="res://enemy/SampleEnemy.gd" type="Script" id=1]
-[ext_resource path="res://enemy/patterns/PatternSpiral.gd" type="Script" id=2]
-[ext_resource path="res://enemy/patterns/PatternFan.gd" type="Script" id=3]
-[ext_resource path="res://enemy/patterns/PatternRain.gd" type="Script" id=4]
-[ext_resource path="res://enemy/patterns/PatternCircle.gd" type="Script" id=5]
-[ext_resource path="res://enemy/patterns/PatternFlower.gd" type="Script" id=6]
+[ext_resource type="Script" uid="uid://byajmcm1jigt5" path="res://enemy/SampleEnemy.gd" id="1"]
+[ext_resource type="Script" uid="uid://1rka6w2brjsw" path="res://enemy/patterns/PatternSpiral.gd" id="2"]
+[ext_resource type="Script" uid="uid://chnohu8wkogbe" path="res://enemy/patterns/PatternFan.gd" id="3"]
+[ext_resource type="Script" uid="uid://baknho26cw0vg" path="res://enemy/patterns/PatternRain.gd" id="4"]
+[ext_resource type="Script" uid="uid://b0ivnho61pn5f" path="res://enemy/patterns/PatternCircle.gd" id="5"]
+[ext_resource type="Script" uid="uid://bru4vdvdt6ala" path="res://enemy/patterns/PatternFlower.gd" id="6"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 8.0
 
 [node name="SampleEnemy" type="Area2D"]
 collision_layer = 4
-collision_mask = 1
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource(1)
+shape = SubResource("1")
 
 [node name="Patterns" type="Node" parent="."]
 

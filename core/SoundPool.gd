@@ -1,5 +1,5 @@
 extends Node
-class_name SoundPool
+class_name Sound_Pool
 
 @export var pool_size: int = 16
 @export var sfx_shoot: AudioStream = preload("res://assets/sfx/shoot.wav")

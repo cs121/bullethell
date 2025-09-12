@@ -7,12 +7,13 @@ class_name Enemy
 
 var hp: int = 0
 var team: int = 1
-var pattern: PatternBase
+var pattern: PatternBase = null
 @onready var patterns: Node = $Patterns
 
 func activate(pos: Vector2, pattern_name: StringName, params: Dictionary = {}) -> void:
 	position = pos
 	hp = max_hp
+	pattern = null
 	for child in patterns.get_children():
 		var p := child as PatternBase
 		p.set_active(false)
@@ -23,7 +24,8 @@ func activate(pos: Vector2, pattern_name: StringName, params: Dictionary = {}) -
 	Utils.activate(self)
 
 func _physics_process(delta: float) -> void:
-	pattern?.tick(self, delta)
+	if pattern != null:
+		pattern.tick(self, delta)
 
 func take_damage(amount: int) -> void:
 	hp -= amount

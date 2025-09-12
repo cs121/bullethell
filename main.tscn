@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="8"]
+[gd_scene load_steps=2 format=3 uid="uid://co0lem5hcdejg"]
 
-[ext_resource path="res://levels/SampleMap.tscn" type="PackedScene" id=1]
+[ext_resource type="PackedScene" path="res://levels/SampleMap.tscn" id="1"]
 
 [node name="Main" type="Node"]
 
