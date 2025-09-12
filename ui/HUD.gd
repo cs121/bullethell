@@ -14,12 +14,16 @@ var next_life_score: int = extra_life_score
 @onready var score_label: Label = $Score
 @onready var lives_label: Label = $Lives
 @onready var flash_rect: ColorRect = $Flash
+@onready var level_name_label: Label = $LevelName
 
 func _ready() -> void:
 	_update()
 	GameSignals.player_hit.connect(_on_player_hit)
 	GameSignals.enemy_killed.connect(_on_enemy_killed)
 	GameSignals.star_collected.connect(_on_star_collected)
+
+func set_level_name(name: String) -> void:
+	level_name_label.text = name
 
 func _process(delta: float) -> void:
 	if flash_time > 0.0:

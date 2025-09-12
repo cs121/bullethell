@@ -8,3 +8,4 @@ script = ExtResource("1")
 [node name="StartButton" type="Button" parent="."]
 position = Vector2(200, 200)
 text = "Start"
+theme_override_font_sizes/font_size = 40
