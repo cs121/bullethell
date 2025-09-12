@@ -9,10 +9,12 @@ PoolManager="*res://core/PoolManager.gd"
 SoundPool="*res://core/SoundPool.gd"
 
 [input]
-move_up={"deadzone":0.5,"events":[{"type":"key","keycode":87},{"type":"key","keycode":16777232}]}
-move_down={"deadzone":0.5,"events":[{"type":"key","keycode":83},{"type":"key","keycode":16777234}]}
-move_left={"deadzone":0.5,"events":[{"type":"key","keycode":65},{"type":"key","keycode":16777231}]}
-move_right={"deadzone":0.5,"events":[{"type":"key","keycode":68},{"type":"key","keycode":16777233}]}
-shoot={"deadzone":0.5,"events":[{"type":"key","keycode":32},{"type":"mouse_button","button_index":1}]}
-focus={"deadzone":0.5,"events":[{"type":"key","keycode":16777237}]}
-pause={"deadzone":0.5,"events":[{"type":"key","keycode":16777217},{"type":"key","keycode":80}]}
+move_up={"deadzone":0.5,"events":[{"type":"key","keycode":87},{"type":"key","keycode":16777232},{"type":"joypad_motion","axis":1,"axis_value":-1.0},{"type":"joypad_button","button_index":12}]}
+move_down={"deadzone":0.5,"events":[{"type":"key","keycode":83},{"type":"key","keycode":16777234},{"type":"joypad_motion","axis":1,"axis_value":1.0},{"type":"joypad_button","button_index":13}]}
+move_left={"deadzone":0.5,"events":[{"type":"key","keycode":65},{"type":"key","keycode":16777231},{"type":"joypad_motion","axis":0,"axis_value":-1.0},{"type":"joypad_button","button_index":14}]}
+move_right={"deadzone":0.5,"events":[{"type":"key","keycode":68},{"type":"key","keycode":16777233},{"type":"joypad_motion","axis":0,"axis_value":1.0},{"type":"joypad_button","button_index":15}]}
+shoot={"deadzone":0.5,"events":[{"type":"key","keycode":32},{"type":"mouse_button","button_index":1},{"type":"joypad_button","button_index":0}]}
+focus={"deadzone":0.5,"events":[{"type":"key","keycode":16777237},{"type":"joypad_button","button_index":4}]}
+pause={"deadzone":0.5,"events":[{"type":"key","keycode":16777217},{"type":"key","keycode":80},{"type":"joypad_button","button_index":7}]}
+special_weapon={"deadzone":0.5,"events":[{"type":"key","keycode":69},{"type":"joypad_button","button_index":1}]}
+switch_weapon={"deadzone":0.5,"events":[{"type":"key","keycode":81},{"type":"joypad_button","button_index":3}]}
