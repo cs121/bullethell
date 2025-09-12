@@ -10,10 +10,13 @@ class_name Player
 var shoot_cd: float = 0.0
 var invincible: float = 0.0
 var team: int = 0
+var current_weapon: int = 0
+var weapons: Array[StringName] = [&"default"]
 
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
 	_handle_shooting(delta)
+	_handle_specials()
 	if invincible > 0.0:
 		invincible -= delta
 
@@ -42,6 +45,15 @@ func _handle_shooting(delta: float) -> void:
 		get_tree().current_scene.add_child(b)
 		b.fire(global_position, Vector2.UP, bullet_speed, team)
 		GameSignals.play_sfx.emit(&"shoot")
+
+
+func _handle_specials() -> void:
+	# Special weapon activation
+	if Input.is_action_just_pressed(&"special_weapon"):
+		GameSignals.play_sfx.emit(&"special")
+	# Cycle through available weapons
+	if Input.is_action_just_pressed(&"switch_weapon"):
+		current_weapon = (current_weapon + 1) % weapons.size()
 
 func take_damage(amount: int) -> void:
 	if invincible > 0.0:
