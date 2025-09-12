@@ -31,3 +31,5 @@ func _on_play_sfx(kind: StringName) -> void:
 			play(sfx_shoot)
 		&"explosion":
 			play(sfx_explosion)
+		&"collect":
+			play(sfx_shoot)

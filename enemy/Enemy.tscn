@@ -5,6 +5,13 @@
 [ext_resource type="Script" uid="uid://chnohu8wkogbe" path="res://enemy/patterns/PatternFan.gd" id="3"]
 [ext_resource type="Script" uid="uid://baknho26cw0vg" path="res://enemy/patterns/PatternRain.gd" id="4"]
 [ext_resource type="Texture2D" path="res://assets/ships/Spaceship-Drakir2.png" id="5"]
+[ext_resource type="Script" uid="uid://b0ivnho61pn5f" path="res://enemy/patterns/PatternCircle.gd" id="6"]
+[ext_resource type="Script" uid="uid://bru4vdvdt6ala" path="res://enemy/patterns/PatternFlower.gd" id="7"]
+[ext_resource type="Script" uid="uid://st05lqvkzj0k" path="res://enemy/patterns/PatternStraight.gd" id="8"]
+[ext_resource type="Script" uid="uid://zz15afwk1l9h" path="res://enemy/patterns/PatternZigzag.gd" id="9"]
+[ext_resource type="Script" uid="uid://sn24bgtp2m8n" path="res://enemy/patterns/PatternSine.gd" id="10"]
+[ext_resource type="Script" uid="uid://bs33chxr3n7p" path="res://enemy/patterns/PatternBurst.gd" id="11"]
+[ext_resource type="Script" uid="uid://cs42diyr4q6v" path="res://enemy/patterns/PatternChase.gd" id="12"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 8.0
@@ -29,5 +36,26 @@ script = ExtResource("3")
 
 [node name="PatternRain" type="Node" parent="Patterns"]
 script = ExtResource("4")
+
+[node name="PatternCircle" type="Node" parent="Patterns"]
+script = ExtResource("6")
+
+[node name="PatternFlower" type="Node" parent="Patterns"]
+script = ExtResource("7")
+
+[node name="PatternStraight" type="Node" parent="Patterns"]
+script = ExtResource("8")
+
+[node name="PatternZigzag" type="Node" parent="Patterns"]
+script = ExtResource("9")
+
+[node name="PatternSine" type="Node" parent="Patterns"]
+script = ExtResource("10")
+
+[node name="PatternBurst" type="Node" parent="Patterns"]
+script = ExtResource("11")
+
+[node name="PatternChase" type="Node" parent="Patterns"]
+script = ExtResource("12")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

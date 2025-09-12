@@ -3,14 +3,26 @@ class_name HUD
 
 @export var lives: int = 3
 var score: int = 0
+@export var flash_duration: float = 0.3
+@export var flash_max_alpha: float = 0.4
+var flash_time: float = 0.0
 
 @onready var score_label: Label = $Score
 @onready var lives_label: Label = $Lives
+@onready var flash_rect: ColorRect = $Flash
 
 func _ready() -> void:
 	_update()
 	GameSignals.player_hit.connect(_on_player_hit)
 	GameSignals.enemy_killed.connect(_on_enemy_killed)
+	GameSignals.star_collected.connect(_on_star_collected)
+
+func _process(delta: float) -> void:
+	if flash_time > 0.0:
+		flash_time -= delta
+		flash_rect.modulate.a = flash_max_alpha * (flash_time / flash_duration)
+	else:
+		flash_rect.modulate.a = 0.0
 
 func _on_player_hit(damage: int) -> void:
 	lives -= damage
@@ -18,6 +30,12 @@ func _on_player_hit(damage: int) -> void:
 
 func _on_enemy_killed(points: int) -> void:
 	score += points
+	_update()
+
+func _on_star_collected(points: int, at: Vector2) -> void:
+	score += points
+	flash_time = flash_duration
+	flash_rect.modulate.a = flash_max_alpha
 	_update()
 
 func _update() -> void:
