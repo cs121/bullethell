@@ -18,7 +18,7 @@ cell_size = Vector2i(32, 32)
 position = Vector2(0, 200)
 
 [node name="Spawner" parent="." instance=ExtResource("4")]
-waves = [{"time":1.0,"pattern":&"PatternFan","pos":Vector2(-60,-120)},{"time":2.5,"pattern":&"PatternSpiral","pos":Vector2(60,-150)},{"time":4.0,"pattern":&"PatternRain","pos":Vector2(0,-170)}]
+waves = [{"time":1.0,"pattern":&"PatternStraight","pos":Vector2(-80,-120)},{"time":2.0,"pattern":&"PatternZigzag","pos":Vector2(80,-120)},{"time":3.0,"pattern":&"PatternSine","pos":Vector2(0,-120)},{"time":4.0,"pattern":&"PatternCircle","pos":Vector2(-60,-150)},{"time":5.0,"pattern":&"PatternFan","pos":Vector2(60,-150)},{"time":6.0,"pattern":&"PatternFlower","pos":Vector2(0,-150)},{"time":7.0,"pattern":&"PatternRain","pos":Vector2(-80,-170)},{"time":8.0,"pattern":&"PatternSpiral","pos":Vector2(80,-170)},{"time":9.0,"pattern":&"PatternBurst","pos":Vector2(-40,-180)},{"time":10.0,"pattern":&"PatternChase","pos":Vector2(40,-180)}]
 
 [node name="Miniboss" parent="." instance=ExtResource("5")]
 position = Vector2(0, -240)

@@ -31,9 +31,10 @@ func take_damage(amount: int) -> void:
 	hp -= amount
 	if hp <= 0:
 		GameSignals.enemy_killed.emit(point_value)
+		GameSignals.play_sfx.emit(&"explosion")
 		GameSignals.spawn_request.emit(&"hit_fx", global_position)
+		GameSignals.spawn_request.emit(&"star", global_position)
 		PoolManager.return_to_pool(self)
-
 func _on_body_entered(body: Node) -> void:
 	if body.has_method("take_damage") and body.get("team") != team:
 		body.call("take_damage", contact_damage)

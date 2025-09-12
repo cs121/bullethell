@@ -4,10 +4,14 @@ class_name Pool_Manager
 @export var bullet_scene: PackedScene = preload("res://bullet/Bullet.tscn")
 @export var enemy_scene: PackedScene = preload("res://enemy/Enemy.tscn")
 @export var hit_fx_scene: PackedScene = preload("res://fx/HitSpark.tscn")
+@export var star_scene: PackedScene = preload("res://collectibles/Star.tscn")
+@export var score_text_scene: PackedScene = preload("res://fx/ScorePopup.tscn")
 @export var player_bullet_count: int = 64
 @export var enemy_bullet_count: int = 128
 @export var enemy_count: int = 32
 @export var hit_fx_count: int = 32
+@export var star_count: int = 32
+@export var score_text_count: int = 32
 
 var pools: Dictionary[StringName, Array] = {}
 var scene_map: Dictionary[StringName, PackedScene] = {}
@@ -17,12 +21,16 @@ func _ready() -> void:
 		&"player_bullets": bullet_scene,
 		&"enemy_bullets": bullet_scene,
 		&"enemies": enemy_scene,
-		&"hit_fx": hit_fx_scene
+		&"hit_fx": hit_fx_scene,
+		&"stars": star_scene,
+		&"score_text": score_text_scene
 	}
 	_prewarm(&"player_bullets", player_bullet_count)
 	_prewarm(&"enemy_bullets", enemy_bullet_count)
 	_prewarm(&"enemies", enemy_count)
 	_prewarm(&"hit_fx", hit_fx_count)
+	_prewarm(&"stars", star_count)
+	_prewarm(&"score_text", score_text_count)
 
 func _prewarm(type: StringName, count: int) -> void:
 	var scene := scene_map[type]
