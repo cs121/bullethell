@@ -31,6 +31,14 @@ offset_bottom = 110.0
 text = "3"
 theme_override_font_sizes/font_size = 40
 
+[node name="Bombs" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 160.0
+offset_right = 10.0
+offset_bottom = 160.0
+text = "3"
+theme_override_font_sizes/font_size = 40
+
 [node name="Flash" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
