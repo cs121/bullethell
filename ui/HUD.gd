@@ -15,6 +15,7 @@ var next_life_score: int = extra_life_score
 @onready var lives_label: Label = $Lives
 @onready var flash_rect: ColorRect = $Flash
 @onready var level_name_label: Label = $LevelName
+@onready var game_over: GameOver = $GameOver # Game over overlay
 
 func _ready() -> void:
 	_update()
@@ -35,6 +36,9 @@ func _process(delta: float) -> void:
 func _on_player_hit(damage: int) -> void:
 	lives -= damage
 	_update()
+	# Show game over when lives are depleted
+	if lives <= 0 and is_instance_valid(game_over):
+		game_over.show_game_over()
 
 func _on_enemy_killed(points: int) -> void:
 	score += points
