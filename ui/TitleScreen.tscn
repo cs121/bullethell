@@ -5,12 +5,17 @@
 [node name="TitleScreen" type="Control"]
 script = ExtResource("1")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="NewGameButton" type="Button" parent="."]
 position = Vector2(200, 200)
-text = "Start"
+text = "New Game"
 theme_override_font_sizes/font_size = 40
 
 [node name="EditorButton" type="Button" parent="."]
 position = Vector2(200, 260)
 text = "Level Editor"
+theme_override_font_sizes/font_size = 40
+
+[node name="ExitButton" type="Button" parent="."]
+position = Vector2(200, 320)
+text = "Exit Game"
 theme_override_font_sizes/font_size = 40
