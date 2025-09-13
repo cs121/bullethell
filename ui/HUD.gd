@@ -2,6 +2,7 @@ extends CanvasLayer
 class_name HUD
 
 @export var lives: int = 3
+@export var bombs: int = 3
 var score: int = 0
 @export var flash_duration: float = 0.3
 @export var flash_max_alpha: float = 0.4
@@ -13,6 +14,7 @@ var next_life_score: int = extra_life_score
 
 @onready var score_label: Label = $Score
 @onready var lives_label: Label = $Lives
+@onready var bombs_label: Label = $Bombs
 @onready var flash_rect: ColorRect = $Flash
 @onready var level_name_label: Label = $LevelName
 @onready var game_over: GameOver = $GameOver # Game over overlay
@@ -22,6 +24,7 @@ func _ready() -> void:
 	GameSignals.player_hit.connect(_on_player_hit)
 	GameSignals.enemy_killed.connect(_on_enemy_killed)
 	GameSignals.star_collected.connect(_on_star_collected)
+	GameSignals.bomb_used.connect(_on_bomb_used)
 
 func set_level_name(name: String) -> void:
 	level_name_label.text = name
@@ -52,6 +55,10 @@ func _on_star_collected(points: int, at: Vector2) -> void:
 	flash_rect.modulate.a = flash_max_alpha
 	_update()
 
+func _on_bomb_used(remaining: int) -> void:
+	bombs = remaining
+	_update()
+
 func _check_extra_life() -> void:
 	# Grant extra lives for reaching score thresholds
 	while score >= next_life_score:
@@ -63,3 +70,4 @@ func _check_extra_life() -> void:
 func _update() -> void:
 	score_label.text = str(score)
 	lives_label.text = str(lives)
+	bombs_label.text = str(bombs)

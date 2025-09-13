@@ -14,6 +14,12 @@ func fire(from: Vector2, dir: Vector2, p_speed: float, p_team: int) -> void:
 	velocity = dir.normalized() * p_speed
 	team = p_team
 	life = lifespan
+	if team == 0:
+		add_to_group(&"player_bullet")
+		remove_from_group(&"enemy_bullet")
+	else:
+		add_to_group(&"enemy_bullet")
+		remove_from_group(&"player_bullet")
 	Utils.activate(self)
 
 func _physics_process(delta: float) -> void:
