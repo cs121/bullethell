@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name HUD
 
-@export var lives: int = 3
+var lives: int = 0
 @export var bombs: int = 3
 var score: int = 0
 @export var flash_duration: float = 0.3
@@ -10,16 +10,14 @@ var flash_time: float = 0.0
 @export var extra_life_score: int = 100000
 var next_life_score: int = extra_life_score
 
-@onready var player: Player = get_parent().get_node("Player")
-
 @onready var score_label: Label = $Score
 @onready var lives_label: Label = $Lives
 @onready var bombs_label: Label = $Bombs
 @onready var flash_rect: ColorRect = $Flash
 @onready var level_name_label: Label = $LevelName
-@onready var game_over: GameOver = $GameOver # Game over overlay
 
 func _ready() -> void:
+	lives = GameManager.lives
 	_update()
 	GameSignals.player_hit.connect(_on_player_hit)
 	GameSignals.enemy_killed.connect(_on_enemy_killed)
@@ -39,9 +37,6 @@ func _process(delta: float) -> void:
 func _on_player_hit(damage: int) -> void:
 	lives -= damage
 	_update()
-	# Show game over when lives are depleted
-	if lives <= 0 and is_instance_valid(game_over):
-		game_over.show_game_over()
 
 func _on_enemy_killed(points: int) -> void:
 	score += points
@@ -63,8 +58,7 @@ func _check_extra_life() -> void:
 	# Grant extra lives for reaching score thresholds
 	while score >= next_life_score:
 		lives += 1
-		if is_instance_valid(player):
-			player.lives += 1
+		GameManager.lives += 1
 		next_life_score += extra_life_score
 
 func _update() -> void:

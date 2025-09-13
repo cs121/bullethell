@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4")
 [autoload]
 
 GameSignals="*res://autoload/GameSignals.gd"
+GameManager="*res://autoload/GameManager.gd"
 PoolManager="*res://core/PoolManager.gd"
 SoundPool="*res://core/SoundPool.gd"
 

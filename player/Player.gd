@@ -4,7 +4,6 @@ class_name Player
 @export var speed: float = 220.0
 @export var fire_rate: float = 8.0
 @export var bullet_speed: float = 480.0
-@export var lives: int = 3
 @export var invincible_time: float = 1.0
 @export var bombs: int = 3
 
@@ -60,8 +59,7 @@ func _activate_bomb() -> void:
 func take_damage(amount: int) -> void:
 	if invincible > 0.0:
 		return
-	lives -= amount
 	invincible = invincible_time
 	GameSignals.player_hit.emit(amount)
-	if lives <= 0:
-		queue_free()
+	GameManager.on_player_death()
+	queue_free()
