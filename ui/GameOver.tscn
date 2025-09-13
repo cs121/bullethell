@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://gqnczf3k0n1t"]
+
+[ext_resource type="Script" uid="uid://bg0vypn34l3q" path="res://ui/GameOver.gd" id="1"]
+
+[node name="GameOver" type="Control"]
+script = ExtResource("1")
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+text = "Game Over"
+theme_override_font_sizes/font_size = 50
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
+text = "Continue"
+theme_override_font_sizes/font_size = 40
